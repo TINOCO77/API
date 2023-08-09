@@ -1,0 +1,53 @@
+PARA ESTE PROYECTO NECESITARAS LAS DEPENDENCIAS DE FASTAPI UVICORN ASI QUE LAS INSTALAREMOS EN LA TERMINAL CON 
+EL SIGUIENTE COMANDO
+
+pip install fastapi uvicorn pytest requests
+
+
+PARA VER LA DOCUMENTACION COMPLETA
+
+1. Asegúrate de que el servidor de desarrollo de Uvicorn esté ejecutándose, abre una terminal, navega hasta directorio del proyecto y ejecuta:
+
+uvicorn main:app --reload
+
+2. Abre un navegador web y visita la siguiente URL:
+   Ve a http://127.0.0.1:8000/docs
+(Ten en cuenta que la URL http://127.0.0.1:8000/docs es solo válida mientras el servidor de desarrollo de Uvicorn esté en ejecución.)
+
+PROBAR EL PROYECTO
+
+1.  Abre una terminal, navega hasta directorio donde se extrajo el proyecto (los archivos main.py, test_app.py, 
+    index.html, styles.css, script.js, etc.) y asegúrate de que tu entorno virtual esté activado (si estás 
+    utilizando uno). Luego, inicia el servidor de desarrollo de Uvicorn para ejecutar la API:Esto iniciará el 
+    servidor de desarrollo en http://127.0.0.1:8000.
+
+uvicorn main:app --reload
+
+2.  Abre otro terminal (sin detener el servidor de desarrollo) y navega al mismo directorio donde tienes los 
+    archivos de tu proyecto. Inicia un servidor HTTP simple para servir la interfaz web 
+    (HTML, CSS, JavaScript):Esto servirá los archivos estáticos en http://127.0.0.1:8000.
+
+python -m http.server 8000
+
+3. Abre tu navegador web y visita http://127.0.0.1:8000. Deberías ver la interfaz web de la librería.
+
+	Usa el formulario para agregar libros.
+	Verás una lista de libros existentes.
+	Puedes hacer clic en "Editar" para modificar un libro.
+	Puedes hacer clic en "Eliminar" para eliminar un libro.
+
+4. Desde la interfaz web, cuando agregues, edites o elimines un libro, estarás interactuando directamente con la 
+   API en segundo plano.
+
+5. Abre una nueva pestaña del navegador y visita http://127.0.0.1:8000/docs. Aquí encontrarás la documentación 
+   interactiva de la API generada automáticamente por FastAPI. Puedes usar esta documentación para probar los 
+   endpoints y ver cómo funcionan.
+
+PARA EJECUTAR PRUEBAS AUTOMATICAS
+
+  Abre una terminal y navega hasta directorio del proyecto. Luego, ejecuta las pruebas automáticas con el siguiente 
+  comando:
+
+pytest
+
+  Esto ejecutará las pruebas definidas en el archivo test_app.py y mostrará los resultados en la terminal.
